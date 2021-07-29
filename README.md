@@ -90,12 +90,17 @@
 ### ROOT FILE SYSTEM 
 
   1. Download Busybox source code
+
     $git clone git://busybox.net/busybox.git
     $cd busybox
   2. We need to change some settings
+  
     a. Settings --> Build static binary (no shared libraries) : Enable
+   
     b. Settings --> Cross compiler prefix : aarch64-none-linux-gnu-
+    
     c. Settings --> Destination path for 'make install' : <path where you have mounted rootfs partition>
+    
   3. Build the source code and Install
   
     $ make -j5
