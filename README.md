@@ -74,14 +74,14 @@
   2. Build the source code
   
     $export ARCH=arm64
-    $export CROSS_COMPILE==aarch64-none-linux-gnu-
+    $export CROSS_COMPILE=aarch64-none-linux-gnu-
     $make bcm2711_defconfig
     $make Image dtbs modules
   3. Copy arch/arm/boot/Image to boot partition. Rename it to kernel8.img
   4. Copy arch/arm/boot/dts/bcm2711-rpi-4-b.dtb to boot partition
   5. Install modules to rootfs partition
 
-    $sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=/mnt/rootfs modules_install
+    $sudo env PATH=$PATH make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- INSTALL_MOD_PATH=/mnt/rootfs modules_install
     
     (Replace /mnt/rootfs with the path where you have mounted rootfs partition)
 
